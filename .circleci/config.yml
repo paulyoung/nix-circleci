@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: nixorg/nix
+    steps:
+      - checkout
+      - run:
+          name: Hello, world!
+          command: nix run -f channel:nixos-18.09 hello -c hello
